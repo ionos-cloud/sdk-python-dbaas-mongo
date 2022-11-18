@@ -7,6 +7,7 @@ All URIs are relative to *https://api.ionos.com/databases/mongodb*
 | [**clusters_delete**](ClustersApi.md#clusters_delete) | **DELETE** /clusters/{clusterId} | Delete a Cluster |
 | [**clusters_find_by_id**](ClustersApi.md#clusters_find_by_id) | **GET** /clusters/{clusterId} | Get a cluster by id |
 | [**clusters_get**](ClustersApi.md#clusters_get) | **GET** /clusters | Get Clusters |
+| [**clusters_patch**](ClustersApi.md#clusters_patch) | **PATCH** /clusters/{clusterId} | Patch a cluster |
 | [**clusters_post**](ClustersApi.md#clusters_post) | **POST** /clusters | Create a Cluster |
 
 
@@ -174,6 +175,63 @@ basicAuth, tokenAuth
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+# **clusters_patch**
+> ClusterResponse clusters_patch(cluster_id, patch_cluster_request)
+
+Patch a cluster
+
+Patch attributes of a MongoDB cluster.
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import ionoscloud_dbaas_mongo
+from ionoscloud_dbaas_mongo.rest import ApiException
+
+# Defining the host is optional and defaults to https://api.ionos.com/databases/mongodb
+configuration = ionoscloud_dbaas_mongo.Configuration(
+    host = 'https://api.ionos.com/databases/mongodb',
+)
+
+# Example of configuring HTTP Basic Authorization
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ionoscloud_dbaas_mongo.ClustersApi(api_client)
+    cluster_id = 'cluster_id_example' # str | The unique ID of the cluster.
+    patch_cluster_request = ionoscloud_dbaas_mongo.PatchClusterRequest() # PatchClusterRequest | Part of the cluster which should be modified.
+    try:
+        # Patch a cluster
+        api_response = api_instance.clusters_patch(cluster_id, patch_cluster_request)
+        print(api_response)
+    except ApiException as e:
+        print('Exception when calling ClustersApi.clusters_patch: %s\n' % e)
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cluster_id** | **str**| The unique ID of the cluster. |  |
+| **patch_cluster_request** | [**PatchClusterRequest**](../models/PatchClusterRequest.md)| Part of the cluster which should be modified. |  |
+
+### Return type
+
+[**ClusterResponse**](../models/ClusterResponse.md)
+
+### Authorization
+
+basicAuth, tokenAuth
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 # **clusters_post**
 > ClusterResponse clusters_post(create_cluster_request)
 
@@ -214,7 +272,7 @@ with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_cluster_request** | [**CreateClusterRequest**](CreateClusterRequest.md)| The cluster to be created. |  |
+| **create_cluster_request** | [**CreateClusterRequest**](../models/CreateClusterRequest.md)| The cluster to be created. |  |
 
 ### Return type
 

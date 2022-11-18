@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "v1.0.0"
+__version__ = "1.1.0"
 
 # import apis into sdk package
 from ionoscloud_dbaas_mongo.api.clusters_api import ClustersApi
@@ -54,6 +54,10 @@ from ionoscloud_dbaas_mongo.models.maintenance_window import MaintenanceWindow
 from ionoscloud_dbaas_mongo.models.metadata import Metadata
 from ionoscloud_dbaas_mongo.models.pagination import Pagination
 from ionoscloud_dbaas_mongo.models.pagination_links import PaginationLinks
+from ionoscloud_dbaas_mongo.models.patch_cluster_properties import PatchClusterProperties
+from ionoscloud_dbaas_mongo.models.patch_cluster_request import PatchClusterRequest
+from ionoscloud_dbaas_mongo.models.patch_user_properties import PatchUserProperties
+from ionoscloud_dbaas_mongo.models.patch_user_request import PatchUserRequest
 from ionoscloud_dbaas_mongo.models.resource_type import ResourceType
 from ionoscloud_dbaas_mongo.models.snapshot_list import SnapshotList
 from ionoscloud_dbaas_mongo.models.snapshot_list_all_of import SnapshotListAllOf

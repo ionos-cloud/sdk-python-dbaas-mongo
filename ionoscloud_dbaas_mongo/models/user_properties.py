@@ -36,8 +36,6 @@ class UserProperties(object):
 
         'username': 'str',
 
-        'database': 'str',
-
         'password': 'str',
 
         'roles': 'list[UserRoles]',
@@ -47,27 +45,23 @@ class UserProperties(object):
 
         'username': 'username',
 
-        'database': 'database',
-
         'password': 'password',
 
         'roles': 'roles',
     }
 
-    def __init__(self, username=None, database=None, password=None, roles=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, username=None, password=None, roles=None, local_vars_configuration=None):  # noqa: E501
         """UserProperties - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._username = None
-        self._database = None
         self._password = None
         self._roles = None
         self.discriminator = None
 
         self.username = username
-        self.database = database
         self.password = password
         if roles is not None:
             self.roles = roles
@@ -97,31 +91,6 @@ class UserProperties(object):
         self._username = username
 
     @property
-    def database(self):
-        """Gets the database of this UserProperties.  # noqa: E501
-
-        The user database to use for authentication.  # noqa: E501
-
-        :return: The database of this UserProperties.  # noqa: E501
-        :rtype: str
-        """
-        return self._database
-
-    @database.setter
-    def database(self, database):
-        """Sets the database of this UserProperties.
-
-        The user database to use for authentication.  # noqa: E501
-
-        :param database: The database of this UserProperties.  # noqa: E501
-        :type database: str
-        """
-        if self.local_vars_configuration.client_side_validation and database is None:  # noqa: E501
-            raise ValueError("Invalid value for `database`, must not be `None`")  # noqa: E501
-
-        self._database = database
-
-    @property
     def password(self):
         """Gets the password of this UserProperties.  # noqa: E501
 
@@ -141,6 +110,9 @@ class UserProperties(object):
         """
         if self.local_vars_configuration.client_side_validation and password is None:  # noqa: E501
             raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                password is not None and len(password) < 10):
+            raise ValueError("Invalid value for `password`, length must be greater than or equal to `10`")  # noqa: E501
 
         self._password = password
 

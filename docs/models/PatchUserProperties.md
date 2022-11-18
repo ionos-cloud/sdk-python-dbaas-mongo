@@ -1,11 +1,10 @@
-# UserProperties
+# PatchUserProperties
 
-Mongodb user properties.
+MongoDB database user patch request properties.
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **username** | **str** |  |  |
-| **password** | **str** |  |  |
+| **password** | **str** |  | [optional]  |
 | **roles** | [**list[UserRoles]**](UserRoles.md) |  | [optional]  |
 
 

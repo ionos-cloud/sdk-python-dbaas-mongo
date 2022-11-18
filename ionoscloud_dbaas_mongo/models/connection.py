@@ -120,7 +120,7 @@ class Connection(object):
     def cidr_list(self):
         """Gets the cidr_list of this Connection.  # noqa: E501
 
-        The list of IPs and subnet for your cluster. Note the following unavailable IP ranges: 10.233.64.0/18 10.233.0.0/18 10.233.114.0/24   # noqa: E501
+        The list of IPs for your cluster. All IPs must be in a /24 network. Note the following unavailable IP ranges: 10.233.114.0/24   # noqa: E501
 
         :return: The cidr_list of this Connection.  # noqa: E501
         :rtype: list[str]
@@ -131,7 +131,7 @@ class Connection(object):
     def cidr_list(self, cidr_list):
         """Sets the cidr_list of this Connection.
 
-        The list of IPs and subnet for your cluster. Note the following unavailable IP ranges: 10.233.64.0/18 10.233.0.0/18 10.233.114.0/24   # noqa: E501
+        The list of IPs for your cluster. All IPs must be in a /24 network. Note the following unavailable IP ranges: 10.233.114.0/24   # noqa: E501
 
         :param cidr_list: The cidr_list of this Connection.  # noqa: E501
         :type cidr_list: list[str]

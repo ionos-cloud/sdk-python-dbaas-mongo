@@ -96,7 +96,7 @@ class CreateClusterProperties(object):
     def template_id(self):
         """Gets the template_id of this CreateClusterProperties.  # noqa: E501
 
-        The unique ID of the template, which specifies the number of cores, storage size, and memory.   # noqa: E501
+        The unique ID of the template, which specifies the number of cores, storage size, and memory. You cannot downgrade to a smaller template or minor edition (e.g. from business to playground). To get a list of all templates to confirm the changes use the /templates endpoint.   # noqa: E501
 
         :return: The template_id of this CreateClusterProperties.  # noqa: E501
         :rtype: str
@@ -107,7 +107,7 @@ class CreateClusterProperties(object):
     def template_id(self, template_id):
         """Sets the template_id of this CreateClusterProperties.
 
-        The unique ID of the template, which specifies the number of cores, storage size, and memory.   # noqa: E501
+        The unique ID of the template, which specifies the number of cores, storage size, and memory. You cannot downgrade to a smaller template or minor edition (e.g. from business to playground). To get a list of all templates to confirm the changes use the /templates endpoint.   # noqa: E501
 
         :param template_id: The template_id of this CreateClusterProperties.  # noqa: E501
         :type template_id: str

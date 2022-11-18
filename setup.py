@@ -15,7 +15,7 @@ import os
 import codecs
 
 NAME = "ionoscloud-dbaas-mongo"
-VERSION = "v1.0.0"
+VERSION = "1.1.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -38,12 +38,12 @@ else:
 setup(
     name=NAME,
     version=VERSION,
-    description="Python SDK for the Ionos DBaaS Postgres API",
+    description="Python SDK for the Ionos DBaaS MongoDB API",
     author='Ionos Cloud',
     author_email='sdk@cloud.ionos.com',
     long_description=long_desc,
     long_description_content_type='text/markdown',
-    url="https://github.com/ionos-cloud/sdk-python-dbaas-postgres",
+    url="https://github.com/ionos-cloud/sdk-python-dbaas-mongo",
     keywords=["OpenAPI", "OpenAPI-Generator", "IONOS DBaaS MongoDB REST API"],
     install_requires=REQUIRES,
     packages=['ionoscloud_dbaas_mongo', 'ionoscloud_dbaas_mongo.api', 'ionoscloud_dbaas_mongo.models'],

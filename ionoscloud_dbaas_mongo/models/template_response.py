@@ -36,6 +36,10 @@ class TemplateResponse(object):
 
         'id': 'str',
 
+        'name': 'str',
+
+        'edition': 'str',
+
         'cores': 'int',
 
         'ram': 'int',
@@ -47,6 +51,10 @@ class TemplateResponse(object):
 
         'id': 'id',
 
+        'name': 'name',
+
+        'edition': 'edition',
+
         'cores': 'cores',
 
         'ram': 'ram',
@@ -54,13 +62,15 @@ class TemplateResponse(object):
         'storage_size': 'storageSize',
     }
 
-    def __init__(self, id=None, cores=None, ram=None, storage_size=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, edition=None, cores=None, ram=None, storage_size=None, local_vars_configuration=None):  # noqa: E501
         """TemplateResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._id = None
+        self._name = None
+        self._edition = None
         self._cores = None
         self._ram = None
         self._storage_size = None
@@ -68,6 +78,10 @@ class TemplateResponse(object):
 
         if id is not None:
             self.id = id
+        if name is not None:
+            self.name = name
+        if edition is not None:
+            self.edition = edition
         if cores is not None:
             self.cores = cores
         if ram is not None:
@@ -98,6 +112,52 @@ class TemplateResponse(object):
         """
 
         self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this TemplateResponse.  # noqa: E501
+
+        The name of the template.  # noqa: E501
+
+        :return: The name of this TemplateResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this TemplateResponse.
+
+        The name of the template.  # noqa: E501
+
+        :param name: The name of this TemplateResponse.  # noqa: E501
+        :type name: str
+        """
+
+        self._name = name
+
+    @property
+    def edition(self):
+        """Gets the edition of this TemplateResponse.  # noqa: E501
+
+        The edition of the template (e.g. enterprise)  # noqa: E501
+
+        :return: The edition of this TemplateResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._edition
+
+    @edition.setter
+    def edition(self, edition):
+        """Sets the edition of this TemplateResponse.
+
+        The edition of the template (e.g. enterprise)  # noqa: E501
+
+        :param edition: The edition of this TemplateResponse.  # noqa: E501
+        :type edition: str
+        """
+
+        self._edition = edition
 
     @property
     def cores(self):

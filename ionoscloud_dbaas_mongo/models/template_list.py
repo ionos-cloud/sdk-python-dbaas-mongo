@@ -34,26 +34,105 @@ class TemplateList(object):
     """
     openapi_types = {
 
+        'type': 'ResourceType',
+
+        'id': 'str',
+
         'items': 'list[TemplateResponse]',
+
+        'offset': 'int',
+
+        'limit': 'int',
+
+        'links': 'PaginationLinks',
     }
 
     attribute_map = {
 
+        'type': 'type',
+
+        'id': 'id',
+
         'items': 'items',
+
+        'offset': 'offset',
+
+        'limit': 'limit',
+
+        'links': '_links',
     }
 
-    def __init__(self, items=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type=None, id=None, items=None, offset=None, limit=None, links=None, local_vars_configuration=None):  # noqa: E501
         """TemplateList - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._type = None
+        self._id = None
         self._items = None
+        self._offset = None
+        self._limit = None
+        self._links = None
         self.discriminator = None
 
+        if type is not None:
+            self.type = type
+        if id is not None:
+            self.id = id
         if items is not None:
             self.items = items
+        if offset is not None:
+            self.offset = offset
+        if limit is not None:
+            self.limit = limit
+        if links is not None:
+            self.links = links
 
+
+    @property
+    def type(self):
+        """Gets the type of this TemplateList.  # noqa: E501
+
+
+        :return: The type of this TemplateList.  # noqa: E501
+        :rtype: ResourceType
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this TemplateList.
+
+
+        :param type: The type of this TemplateList.  # noqa: E501
+        :type type: ResourceType
+        """
+
+        self._type = type
+
+    @property
+    def id(self):
+        """Gets the id of this TemplateList.  # noqa: E501
+
+        The unique ID of the resource.  # noqa: E501
+
+        :return: The id of this TemplateList.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this TemplateList.
+
+        The unique ID of the resource.  # noqa: E501
+
+        :param id: The id of this TemplateList.  # noqa: E501
+        :type id: str
+        """
+
+        self._id = id
 
     @property
     def items(self):
@@ -75,6 +154,79 @@ class TemplateList(object):
         """
 
         self._items = items
+
+    @property
+    def offset(self):
+        """Gets the offset of this TemplateList.  # noqa: E501
+
+        The offset specified in the request (if none was specified, the default offset is 0) (not implemented yet).   # noqa: E501
+
+        :return: The offset of this TemplateList.  # noqa: E501
+        :rtype: int
+        """
+        return self._offset
+
+    @offset.setter
+    def offset(self, offset):
+        """Sets the offset of this TemplateList.
+
+        The offset specified in the request (if none was specified, the default offset is 0) (not implemented yet).   # noqa: E501
+
+        :param offset: The offset of this TemplateList.  # noqa: E501
+        :type offset: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                offset is not None and offset < 0):  # noqa: E501
+            raise ValueError("Invalid value for `offset`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._offset = offset
+
+    @property
+    def limit(self):
+        """Gets the limit of this TemplateList.  # noqa: E501
+
+        The limit specified in the request (if none was specified, use the endpoint's default pagination limit) (not implemented yet, always return number of items).   # noqa: E501
+
+        :return: The limit of this TemplateList.  # noqa: E501
+        :rtype: int
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit):
+        """Sets the limit of this TemplateList.
+
+        The limit specified in the request (if none was specified, use the endpoint's default pagination limit) (not implemented yet, always return number of items).   # noqa: E501
+
+        :param limit: The limit of this TemplateList.  # noqa: E501
+        :type limit: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                limit is not None and limit < 0):  # noqa: E501
+            raise ValueError("Invalid value for `limit`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._limit = limit
+
+    @property
+    def links(self):
+        """Gets the links of this TemplateList.  # noqa: E501
+
+
+        :return: The links of this TemplateList.  # noqa: E501
+        :rtype: PaginationLinks
+        """
+        return self._links
+
+    @links.setter
+    def links(self, links):
+        """Sets the links of this TemplateList.
+
+
+        :param links: The links of this TemplateList.  # noqa: E501
+        :type links: PaginationLinks
+        """
+
+        self._links = links
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
