@@ -4,15 +4,15 @@ All URIs are relative to *https://api.ionos.com/databases/mongodb*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**clusters_users_delete**](UsersApi.md#clusters_users_delete) | **DELETE** /clusters/{clusterId}/users/{database}/{username} | Delete a MongoDB User by ID |
-| [**clusters_users_find_by_id**](UsersApi.md#clusters_users_find_by_id) | **GET** /clusters/{clusterId}/users/{database}/{username} | Get a MongoDB User by ID |
-| [**clusters_users_get**](UsersApi.md#clusters_users_get) | **GET** /clusters/{clusterId}/users | Get a Cluster Users |
-| [**clusters_users_patch**](UsersApi.md#clusters_users_patch) | **PATCH** /clusters/{clusterId}/users/{database}/{username} | Patch a MongoDB User by ID |
+| [**clusters_users_delete**](UsersApi.md#clusters_users_delete) | **DELETE** /clusters/{clusterId}/users/{username} | Delete a MongoDB User by ID |
+| [**clusters_users_find_by_id**](UsersApi.md#clusters_users_find_by_id) | **GET** /clusters/{clusterId}/users/{username} | Get a MongoDB User by ID |
+| [**clusters_users_get**](UsersApi.md#clusters_users_get) | **GET** /clusters/{clusterId}/users | Get all Cluster Users |
+| [**clusters_users_patch**](UsersApi.md#clusters_users_patch) | **PATCH** /clusters/{clusterId}/users/{username} | Patch a MongoDB User by ID |
 | [**clusters_users_post**](UsersApi.md#clusters_users_post) | **POST** /clusters/{clusterId}/users | Create MongoDB User |
 
 
 # **clusters_users_delete**
-> User clusters_users_delete(cluster_id, database, username)
+> User clusters_users_delete(cluster_id, username)
 
 Delete a MongoDB User by ID
 
@@ -39,11 +39,10 @@ with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ionoscloud_dbaas_mongo.UsersApi(api_client)
     cluster_id = 'cluster_id_example' # str | The unique ID of the cluster.
-    database = 'database_example' # str | The authentication database.
     username = 'username_example' # str | The authentication username.
     try:
         # Delete a MongoDB User by ID
-        api_response = api_instance.clusters_users_delete(cluster_id, database, username)
+        api_response = api_instance.clusters_users_delete(cluster_id, username)
         print(api_response)
     except ApiException as e:
         print('Exception when calling UsersApi.clusters_users_delete: %s\n' % e)
@@ -54,7 +53,6 @@ with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **cluster_id** | **str**| The unique ID of the cluster. |  |
-| **database** | **str**| The authentication database. |  |
 | **username** | **str**| The authentication username. |  |
 
 ### Return type
@@ -71,11 +69,11 @@ basicAuth, tokenAuth
  - **Accept**: application/json
 
 # **clusters_users_find_by_id**
-> User clusters_users_find_by_id(cluster_id, database, username)
+> User clusters_users_find_by_id(cluster_id, username)
 
 Get a MongoDB User by ID
 
-Retrieves the MongoDB user identified by the username and database parameters.
+Retrieves the MongoDB user identified by the username.
 
 ### Example
 
@@ -98,11 +96,10 @@ with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ionoscloud_dbaas_mongo.UsersApi(api_client)
     cluster_id = 'cluster_id_example' # str | The unique ID of the cluster.
-    database = 'database_example' # str | The authentication database.
     username = 'username_example' # str | The authentication username.
     try:
         # Get a MongoDB User by ID
-        api_response = api_instance.clusters_users_find_by_id(cluster_id, database, username)
+        api_response = api_instance.clusters_users_find_by_id(cluster_id, username)
         print(api_response)
     except ApiException as e:
         print('Exception when calling UsersApi.clusters_users_find_by_id: %s\n' % e)
@@ -113,7 +110,6 @@ with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **cluster_id** | **str**| The unique ID of the cluster. |  |
-| **database** | **str**| The authentication database. |  |
 | **username** | **str**| The authentication username. |  |
 
 ### Return type
@@ -132,7 +128,7 @@ basicAuth, tokenAuth
 # **clusters_users_get**
 > UsersList clusters_users_get(cluster_id)
 
-Get a Cluster Users
+Get all Cluster Users
 
 Retrieves a list of MongoDB users.
 
@@ -158,7 +154,7 @@ with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
     api_instance = ionoscloud_dbaas_mongo.UsersApi(api_client)
     cluster_id = 'cluster_id_example' # str | The unique ID of the cluster.
     try:
-        # Get a Cluster Users
+        # Get all Cluster Users
         api_response = api_instance.clusters_users_get(cluster_id)
         print(api_response)
     except ApiException as e:
@@ -185,7 +181,7 @@ basicAuth, tokenAuth
  - **Accept**: application/json
 
 # **clusters_users_patch**
-> User clusters_users_patch(cluster_id, database, username, patch_user_request)
+> User clusters_users_patch(cluster_id, username, patch_user_request)
 
 Patch a MongoDB User by ID
 
@@ -212,12 +208,11 @@ with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ionoscloud_dbaas_mongo.UsersApi(api_client)
     cluster_id = 'cluster_id_example' # str | The unique ID of the cluster.
-    database = 'database_example' # str | The authentication database.
     username = 'username_example' # str | The authentication username.
     patch_user_request = ionoscloud_dbaas_mongo.PatchUserRequest() # PatchUserRequest | Part of the MongoDB user which should be modified.
     try:
         # Patch a MongoDB User by ID
-        api_response = api_instance.clusters_users_patch(cluster_id, database, username, patch_user_request)
+        api_response = api_instance.clusters_users_patch(cluster_id, username, patch_user_request)
         print(api_response)
     except ApiException as e:
         print('Exception when calling UsersApi.clusters_users_patch: %s\n' % e)
@@ -228,7 +223,6 @@ with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **cluster_id** | **str**| The unique ID of the cluster. |  |
-| **database** | **str**| The authentication database. |  |
 | **username** | **str**| The authentication username. |  |
 | **patch_user_request** | [**PatchUserRequest**](../models/PatchUserRequest.md)| Part of the MongoDB user which should be modified. |  |
 

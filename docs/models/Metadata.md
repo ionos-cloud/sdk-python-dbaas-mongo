@@ -11,5 +11,6 @@ The metadata of the resource.
 | **last_modified_by** | **str** | The last user who modified the resource. | [optional]  |
 | **last_modified_by_user_id** | **str** | The ID of the user who last modified the resource. | [optional]  |
 | **state** | [**State**](State.md) |  | [optional]  |
+| **health** | [**Health**](Health.md) |  | [optional]  |
 
 

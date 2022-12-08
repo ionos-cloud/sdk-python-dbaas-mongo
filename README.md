@@ -152,10 +152,10 @@ All URIs are relative to *https://api.ionos.com/databases/mongodb*
 | RestoresApi | [**clusters_restore_post**](docs/api/RestoresApi.md#clusters_restore_post) | **POST** /clusters/{clusterId}/restore | In-place restore of a cluster |
 | SnapshotsApi | [**clusters_snapshots_get**](docs/api/SnapshotsApi.md#clusters_snapshots_get) | **GET** /clusters/{clusterId}/snapshots | Get the snapshots of your cluster |
 | TemplatesApi | [**templates_get**](docs/api/TemplatesApi.md#templates_get) | **GET** /templates | Get Templates |
-| UsersApi | [**clusters_users_delete**](docs/api/UsersApi.md#clusters_users_delete) | **DELETE** /clusters/{clusterId}/users/{database}/{username} | Delete a MongoDB User by ID |
-| UsersApi | [**clusters_users_find_by_id**](docs/api/UsersApi.md#clusters_users_find_by_id) | **GET** /clusters/{clusterId}/users/{database}/{username} | Get a MongoDB User by ID |
-| UsersApi | [**clusters_users_get**](docs/api/UsersApi.md#clusters_users_get) | **GET** /clusters/{clusterId}/users | Get a Cluster Users |
-| UsersApi | [**clusters_users_patch**](docs/api/UsersApi.md#clusters_users_patch) | **PATCH** /clusters/{clusterId}/users/{database}/{username} | Patch a MongoDB User by ID |
+| UsersApi | [**clusters_users_delete**](docs/api/UsersApi.md#clusters_users_delete) | **DELETE** /clusters/{clusterId}/users/{username} | Delete a MongoDB User by ID |
+| UsersApi | [**clusters_users_find_by_id**](docs/api/UsersApi.md#clusters_users_find_by_id) | **GET** /clusters/{clusterId}/users/{username} | Get a MongoDB User by ID |
+| UsersApi | [**clusters_users_get**](docs/api/UsersApi.md#clusters_users_get) | **GET** /clusters/{clusterId}/users | Get all Cluster Users |
+| UsersApi | [**clusters_users_patch**](docs/api/UsersApi.md#clusters_users_patch) | **PATCH** /clusters/{clusterId}/users/{username} | Patch a MongoDB User by ID |
 | UsersApi | [**clusters_users_post**](docs/api/UsersApi.md#clusters_users_post) | **POST** /clusters/{clusterId}/users | Create MongoDB User |
 
 </details>
@@ -181,6 +181,7 @@ All URIs are relative to *https://api.ionos.com/databases/mongodb*
  - [DayOfTheWeek](docs/models/DayOfTheWeek)
  - [ErrorMessage](docs/models/ErrorMessage)
  - [ErrorResponse](docs/models/ErrorResponse)
+ - [Health](docs/models/Health)
  - [MaintenanceWindow](docs/models/MaintenanceWindow)
  - [Metadata](docs/models/Metadata)
  - [Pagination](docs/models/Pagination)

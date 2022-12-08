@@ -17,20 +17,18 @@ class UsersApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def clusters_users_delete(self, cluster_id, database, username, **kwargs):  # noqa: E501
+    def clusters_users_delete(self, cluster_id, username, **kwargs):  # noqa: E501
         """Delete a MongoDB User by ID  # noqa: E501
 
         Deletes a MongoDB user specified by its ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.clusters_users_delete(cluster_id, database, username, async_req=True)
+        >>> thread = api.clusters_users_delete(cluster_id, username, async_req=True)
         >>> result = thread.get()
 
         :param cluster_id: The unique ID of the cluster. (required)
         :type cluster_id: str
-        :param database: The authentication database. (required)
-        :type database: str
         :param username: The authentication username. (required)
         :type username: str
         :param async_req: Whether to execute the request asynchronously.
@@ -49,22 +47,20 @@ class UsersApi(object):
         :rtype: User
         """
         kwargs['_return_http_data_only'] = True
-        return self.clusters_users_delete_with_http_info(cluster_id, database, username, **kwargs)  # noqa: E501
+        return self.clusters_users_delete_with_http_info(cluster_id, username, **kwargs)  # noqa: E501
 
-    def clusters_users_delete_with_http_info(self, cluster_id, database, username, **kwargs):  # noqa: E501
+    def clusters_users_delete_with_http_info(self, cluster_id, username, **kwargs):  # noqa: E501
         """Delete a MongoDB User by ID  # noqa: E501
 
         Deletes a MongoDB user specified by its ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.clusters_users_delete_with_http_info(cluster_id, database, username, async_req=True)
+        >>> thread = api.clusters_users_delete_with_http_info(cluster_id, username, async_req=True)
         >>> result = thread.get()
 
         :param cluster_id: The unique ID of the cluster. (required)
         :type cluster_id: str
-        :param database: The authentication database. (required)
-        :type database: str
         :param username: The authentication username. (required)
         :type username: str
         :param async_req: Whether to execute the request asynchronously.
@@ -94,7 +90,6 @@ class UsersApi(object):
 
         all_params = [
             'cluster_id',
-            'database',
             'username'
         ]
         all_params.extend(
@@ -121,10 +116,6 @@ class UsersApi(object):
         if self.api_client.client_side_validation and ('cluster_id' not in local_var_params or  # noqa: E501
                                                         local_var_params['cluster_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cluster_id` when calling `clusters_users_delete`")  # noqa: E501
-        # verify the required parameter 'database' is set
-        if self.api_client.client_side_validation and ('database' not in local_var_params or  # noqa: E501
-                                                        local_var_params['database'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `database` when calling `clusters_users_delete`")  # noqa: E501
         # verify the required parameter 'username' is set
         if self.api_client.client_side_validation and ('username' not in local_var_params or  # noqa: E501
                                                         local_var_params['username'] is None):  # noqa: E501
@@ -135,8 +126,6 @@ class UsersApi(object):
         path_params = {}
         if 'cluster_id' in local_var_params:
             path_params['clusterId'] = local_var_params['cluster_id']  # noqa: E501
-        if 'database' in local_var_params:
-            path_params['database'] = local_var_params['database']  # noqa: E501
         if 'username' in local_var_params:
             path_params['username'] = local_var_params['username']  # noqa: E501
 
@@ -160,7 +149,7 @@ class UsersApi(object):
             response_type = kwargs['response_type']
 
         return self.api_client.call_api(
-            '/clusters/{clusterId}/users/{database}/{username}', 'DELETE',
+            '/clusters/{clusterId}/users/{username}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -176,20 +165,18 @@ class UsersApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def clusters_users_find_by_id(self, cluster_id, database, username, **kwargs):  # noqa: E501
+    def clusters_users_find_by_id(self, cluster_id, username, **kwargs):  # noqa: E501
         """Get a MongoDB User by ID  # noqa: E501
 
-        Retrieves the MongoDB user identified by the username and database parameters.  # noqa: E501
+        Retrieves the MongoDB user identified by the username.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.clusters_users_find_by_id(cluster_id, database, username, async_req=True)
+        >>> thread = api.clusters_users_find_by_id(cluster_id, username, async_req=True)
         >>> result = thread.get()
 
         :param cluster_id: The unique ID of the cluster. (required)
         :type cluster_id: str
-        :param database: The authentication database. (required)
-        :type database: str
         :param username: The authentication username. (required)
         :type username: str
         :param async_req: Whether to execute the request asynchronously.
@@ -208,22 +195,20 @@ class UsersApi(object):
         :rtype: User
         """
         kwargs['_return_http_data_only'] = True
-        return self.clusters_users_find_by_id_with_http_info(cluster_id, database, username, **kwargs)  # noqa: E501
+        return self.clusters_users_find_by_id_with_http_info(cluster_id, username, **kwargs)  # noqa: E501
 
-    def clusters_users_find_by_id_with_http_info(self, cluster_id, database, username, **kwargs):  # noqa: E501
+    def clusters_users_find_by_id_with_http_info(self, cluster_id, username, **kwargs):  # noqa: E501
         """Get a MongoDB User by ID  # noqa: E501
 
-        Retrieves the MongoDB user identified by the username and database parameters.  # noqa: E501
+        Retrieves the MongoDB user identified by the username.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.clusters_users_find_by_id_with_http_info(cluster_id, database, username, async_req=True)
+        >>> thread = api.clusters_users_find_by_id_with_http_info(cluster_id, username, async_req=True)
         >>> result = thread.get()
 
         :param cluster_id: The unique ID of the cluster. (required)
         :type cluster_id: str
-        :param database: The authentication database. (required)
-        :type database: str
         :param username: The authentication username. (required)
         :type username: str
         :param async_req: Whether to execute the request asynchronously.
@@ -253,7 +238,6 @@ class UsersApi(object):
 
         all_params = [
             'cluster_id',
-            'database',
             'username'
         ]
         all_params.extend(
@@ -280,10 +264,6 @@ class UsersApi(object):
         if self.api_client.client_side_validation and ('cluster_id' not in local_var_params or  # noqa: E501
                                                         local_var_params['cluster_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cluster_id` when calling `clusters_users_find_by_id`")  # noqa: E501
-        # verify the required parameter 'database' is set
-        if self.api_client.client_side_validation and ('database' not in local_var_params or  # noqa: E501
-                                                        local_var_params['database'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `database` when calling `clusters_users_find_by_id`")  # noqa: E501
         # verify the required parameter 'username' is set
         if self.api_client.client_side_validation and ('username' not in local_var_params or  # noqa: E501
                                                         local_var_params['username'] is None):  # noqa: E501
@@ -294,8 +274,6 @@ class UsersApi(object):
         path_params = {}
         if 'cluster_id' in local_var_params:
             path_params['clusterId'] = local_var_params['cluster_id']  # noqa: E501
-        if 'database' in local_var_params:
-            path_params['database'] = local_var_params['database']  # noqa: E501
         if 'username' in local_var_params:
             path_params['username'] = local_var_params['username']  # noqa: E501
 
@@ -319,7 +297,7 @@ class UsersApi(object):
             response_type = kwargs['response_type']
 
         return self.api_client.call_api(
-            '/clusters/{clusterId}/users/{database}/{username}', 'GET',
+            '/clusters/{clusterId}/users/{username}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -336,7 +314,7 @@ class UsersApi(object):
             _request_auth=local_var_params.get('_request_auth'))
 
     def clusters_users_get(self, cluster_id, **kwargs):  # noqa: E501
-        """Get a Cluster Users  # noqa: E501
+        """Get all Cluster Users  # noqa: E501
 
         Retrieves a list of MongoDB users.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -366,7 +344,7 @@ class UsersApi(object):
         return self.clusters_users_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
 
     def clusters_users_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """Get a Cluster Users  # noqa: E501
+        """Get all Cluster Users  # noqa: E501
 
         Retrieves a list of MongoDB users.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -472,20 +450,18 @@ class UsersApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def clusters_users_patch(self, cluster_id, database, username, patch_user_request, **kwargs):  # noqa: E501
+    def clusters_users_patch(self, cluster_id, username, patch_user_request, **kwargs):  # noqa: E501
         """Patch a MongoDB User by ID  # noqa: E501
 
         Patches a MongoDB user specified by its ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.clusters_users_patch(cluster_id, database, username, patch_user_request, async_req=True)
+        >>> thread = api.clusters_users_patch(cluster_id, username, patch_user_request, async_req=True)
         >>> result = thread.get()
 
         :param cluster_id: The unique ID of the cluster. (required)
         :type cluster_id: str
-        :param database: The authentication database. (required)
-        :type database: str
         :param username: The authentication username. (required)
         :type username: str
         :param patch_user_request: Part of the MongoDB user which should be modified. (required)
@@ -506,22 +482,20 @@ class UsersApi(object):
         :rtype: User
         """
         kwargs['_return_http_data_only'] = True
-        return self.clusters_users_patch_with_http_info(cluster_id, database, username, patch_user_request, **kwargs)  # noqa: E501
+        return self.clusters_users_patch_with_http_info(cluster_id, username, patch_user_request, **kwargs)  # noqa: E501
 
-    def clusters_users_patch_with_http_info(self, cluster_id, database, username, patch_user_request, **kwargs):  # noqa: E501
+    def clusters_users_patch_with_http_info(self, cluster_id, username, patch_user_request, **kwargs):  # noqa: E501
         """Patch a MongoDB User by ID  # noqa: E501
 
         Patches a MongoDB user specified by its ID.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.clusters_users_patch_with_http_info(cluster_id, database, username, patch_user_request, async_req=True)
+        >>> thread = api.clusters_users_patch_with_http_info(cluster_id, username, patch_user_request, async_req=True)
         >>> result = thread.get()
 
         :param cluster_id: The unique ID of the cluster. (required)
         :type cluster_id: str
-        :param database: The authentication database. (required)
-        :type database: str
         :param username: The authentication username. (required)
         :type username: str
         :param patch_user_request: Part of the MongoDB user which should be modified. (required)
@@ -553,7 +527,6 @@ class UsersApi(object):
 
         all_params = [
             'cluster_id',
-            'database',
             'username',
             'patch_user_request'
         ]
@@ -581,10 +554,6 @@ class UsersApi(object):
         if self.api_client.client_side_validation and ('cluster_id' not in local_var_params or  # noqa: E501
                                                         local_var_params['cluster_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cluster_id` when calling `clusters_users_patch`")  # noqa: E501
-        # verify the required parameter 'database' is set
-        if self.api_client.client_side_validation and ('database' not in local_var_params or  # noqa: E501
-                                                        local_var_params['database'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `database` when calling `clusters_users_patch`")  # noqa: E501
         # verify the required parameter 'username' is set
         if self.api_client.client_side_validation and ('username' not in local_var_params or  # noqa: E501
                                                         local_var_params['username'] is None):  # noqa: E501
@@ -599,8 +568,6 @@ class UsersApi(object):
         path_params = {}
         if 'cluster_id' in local_var_params:
             path_params['clusterId'] = local_var_params['cluster_id']  # noqa: E501
-        if 'database' in local_var_params:
-            path_params['database'] = local_var_params['database']  # noqa: E501
         if 'username' in local_var_params:
             path_params['username'] = local_var_params['username']  # noqa: E501
 
@@ -630,7 +597,7 @@ class UsersApi(object):
             response_type = kwargs['response_type']
 
         return self.api_client.call_api(
-            '/clusters/{clusterId}/users/{database}/{username}', 'PATCH',
+            '/clusters/{clusterId}/users/{username}', 'PATCH',
             path_params,
             query_params,
             header_params,
