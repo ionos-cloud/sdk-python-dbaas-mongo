@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.1.1"
+__version__ = "1.2.0"
 
 # import apis into sdk package
 from ionoscloud_dbaas_mongo.api.clusters_api import ClustersApi
