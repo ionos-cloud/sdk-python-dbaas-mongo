@@ -7,7 +7,6 @@ The IONOS Cloud SDK for Python provides you with access to the IONOS Cloud Datab
 With IONOS Cloud Database as a Service, you have the ability to quickly set up and manage a MongoDB database. You can also delete clusters, manage backups and users via the API.
 
 
-**Note:** DBaaS - MongoDB is currently in the **Early Access (EA)** phase. We recommend keeping usage and testing to non-production critical applications. Please contact your sales representative or support for more information.
 
 
 ## Getting Started
