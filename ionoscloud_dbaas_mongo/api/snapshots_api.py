@@ -29,6 +29,10 @@ class SnapshotsApi(object):
 
         :param cluster_id: The unique ID of the cluster. (required)
         :type cluster_id: str
+        :param limit: The maximum number of elements to return. Use together with 'offset' for pagination.
+        :type limit: int
+        :param offset: The first element to return. Use together with 'limit' for pagination.
+        :type offset: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -59,6 +63,10 @@ class SnapshotsApi(object):
 
         :param cluster_id: The unique ID of the cluster. (required)
         :type cluster_id: str
+        :param limit: The maximum number of elements to return. Use together with 'offset' for pagination.
+        :type limit: int
+        :param offset: The first element to return. Use together with 'limit' for pagination.
+        :type offset: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -85,7 +93,9 @@ class SnapshotsApi(object):
         local_var_params = locals()
 
         all_params = [
-            'cluster_id'
+            'cluster_id',
+            'limit',
+            'offset'
         ]
         all_params.extend(
             [
@@ -112,6 +122,10 @@ class SnapshotsApi(object):
                                                         local_var_params['cluster_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `cluster_id` when calling `clusters_snapshots_get`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `clusters_snapshots_get`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `clusters_snapshots_get`, must be a value greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -119,6 +133,10 @@ class SnapshotsApi(object):
             path_params['clusterId'] = local_var_params['cluster_id']  # noqa: E501
 
         query_params = list(local_var_params.get('query_params', {}).items())
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
 
         header_params = {}
 

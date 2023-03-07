@@ -126,7 +126,7 @@ basicAuth, tokenAuth
  - **Accept**: application/json
 
 # **clusters_users_get**
-> UsersList clusters_users_get(cluster_id)
+> UsersList clusters_users_get(cluster_id, limit=limit, offset=offset)
 
 Get all Cluster Users
 
@@ -166,6 +166,8 @@ with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **cluster_id** | **str**| The unique ID of the cluster. |  |
+| **limit** | **int**| The maximum number of elements to return. Use together with &#39;offset&#39; for pagination. | [optional] [default to 100] |
+| **offset** | **int**| The first element to return. Use together with &#39;limit&#39; for pagination. | [optional] [default to 0] |
 
 ### Return type
 

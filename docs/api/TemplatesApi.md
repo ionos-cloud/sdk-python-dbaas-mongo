@@ -8,7 +8,7 @@ All URIs are relative to *https://api.ionos.com/databases/mongodb*
 
 
 # **templates_get**
-> TemplateList templates_get()
+> TemplateList templates_get(limit=limit, offset=offset)
 
 Get Templates
 
@@ -43,7 +43,11 @@ with ionoscloud_dbaas_mongo.ApiClient(configuration) as api_client:
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| The maximum number of elements to return. Use together with &#39;offset&#39; for pagination. | [optional] [default to 100] |
+| **offset** | **int**| The first element to return. Use together with &#39;limit&#39; for pagination. | [optional] [default to 0] |
 
 ### Return type
 
