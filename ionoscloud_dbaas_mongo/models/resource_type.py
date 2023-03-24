@@ -32,8 +32,9 @@ class ResourceType(object):
     CLUSTER = "cluster"
     USER = "user"
     SNAPSHOT = "snapshot"
+    TEMPLATE = "template"
 
-    allowable_values = [COLLECTION, CLUSTER, USER, SNAPSHOT]  # noqa: E501
+    allowable_values = [COLLECTION, CLUSTER, USER, SNAPSHOT, TEMPLATE]  # noqa: E501
 
     """
     Attributes:

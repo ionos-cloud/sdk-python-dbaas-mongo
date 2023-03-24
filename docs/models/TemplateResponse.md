@@ -1,14 +1,12 @@
 # TemplateResponse
 
-A MongoDB template item.
+A MongoDB template.
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **str** | The unique template ID. | [optional]  |
-| **name** | **str** | The name of the template. | [optional]  |
-| **edition** | **str** | The edition of the template (e.g. enterprise) | [optional]  |
-| **cores** | **int** | The number of CPU cores. | [optional]  |
-| **ram** | **int** | The amount of memory in GB. | [optional]  |
-| **storage_size** | **int** | The amount of storage size in GB. | [optional]  |
+| **type** | [**ResourceType**](ResourceType.md) |  | [optional]  |
+| **id** | **str** | The unique ID of the resource. | [optional]  |
+| **metadata** | [**Metadata**](Metadata.md) |  | [optional]  |
+| **properties** | [**TemplateProperties**](TemplateProperties.md) |  | [optional]  |
 
 

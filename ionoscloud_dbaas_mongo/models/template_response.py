@@ -34,67 +34,74 @@ class TemplateResponse(object):
     """
     openapi_types = {
 
+        'type': 'ResourceType',
+
         'id': 'str',
 
-        'name': 'str',
+        'metadata': 'Metadata',
 
-        'edition': 'str',
-
-        'cores': 'int',
-
-        'ram': 'int',
-
-        'storage_size': 'int',
+        'properties': 'TemplateProperties',
     }
 
     attribute_map = {
 
+        'type': 'type',
+
         'id': 'id',
 
-        'name': 'name',
+        'metadata': 'metadata',
 
-        'edition': 'edition',
-
-        'cores': 'cores',
-
-        'ram': 'ram',
-
-        'storage_size': 'storageSize',
+        'properties': 'properties',
     }
 
-    def __init__(self, id=None, name=None, edition=None, cores=None, ram=None, storage_size=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type=None, id=None, metadata=None, properties=None, local_vars_configuration=None):  # noqa: E501
         """TemplateResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._type = None
         self._id = None
-        self._name = None
-        self._edition = None
-        self._cores = None
-        self._ram = None
-        self._storage_size = None
+        self._metadata = None
+        self._properties = None
         self.discriminator = None
 
+        if type is not None:
+            self.type = type
         if id is not None:
             self.id = id
-        if name is not None:
-            self.name = name
-        if edition is not None:
-            self.edition = edition
-        if cores is not None:
-            self.cores = cores
-        if ram is not None:
-            self.ram = ram
-        if storage_size is not None:
-            self.storage_size = storage_size
+        if metadata is not None:
+            self.metadata = metadata
+        if properties is not None:
+            self.properties = properties
 
+
+    @property
+    def type(self):
+        """Gets the type of this TemplateResponse.  # noqa: E501
+
+
+        :return: The type of this TemplateResponse.  # noqa: E501
+        :rtype: ResourceType
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this TemplateResponse.
+
+
+        :param type: The type of this TemplateResponse.  # noqa: E501
+        :type type: ResourceType
+        """
+
+        self._type = type
 
     @property
     def id(self):
         """Gets the id of this TemplateResponse.  # noqa: E501
 
-        The unique template ID.  # noqa: E501
+        The unique ID of the resource.  # noqa: E501
 
         :return: The id of this TemplateResponse.  # noqa: E501
         :rtype: str
@@ -105,7 +112,7 @@ class TemplateResponse(object):
     def id(self, id):
         """Sets the id of this TemplateResponse.
 
-        The unique template ID.  # noqa: E501
+        The unique ID of the resource.  # noqa: E501
 
         :param id: The id of this TemplateResponse.  # noqa: E501
         :type id: str
@@ -114,119 +121,46 @@ class TemplateResponse(object):
         self._id = id
 
     @property
-    def name(self):
-        """Gets the name of this TemplateResponse.  # noqa: E501
+    def metadata(self):
+        """Gets the metadata of this TemplateResponse.  # noqa: E501
 
-        The name of the template.  # noqa: E501
 
-        :return: The name of this TemplateResponse.  # noqa: E501
-        :rtype: str
+        :return: The metadata of this TemplateResponse.  # noqa: E501
+        :rtype: Metadata
         """
-        return self._name
+        return self._metadata
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this TemplateResponse.
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this TemplateResponse.
 
-        The name of the template.  # noqa: E501
 
-        :param name: The name of this TemplateResponse.  # noqa: E501
-        :type name: str
+        :param metadata: The metadata of this TemplateResponse.  # noqa: E501
+        :type metadata: Metadata
         """
 
-        self._name = name
+        self._metadata = metadata
 
     @property
-    def edition(self):
-        """Gets the edition of this TemplateResponse.  # noqa: E501
+    def properties(self):
+        """Gets the properties of this TemplateResponse.  # noqa: E501
 
-        The edition of the template (e.g. enterprise)  # noqa: E501
 
-        :return: The edition of this TemplateResponse.  # noqa: E501
-        :rtype: str
+        :return: The properties of this TemplateResponse.  # noqa: E501
+        :rtype: TemplateProperties
         """
-        return self._edition
+        return self._properties
 
-    @edition.setter
-    def edition(self, edition):
-        """Sets the edition of this TemplateResponse.
+    @properties.setter
+    def properties(self, properties):
+        """Sets the properties of this TemplateResponse.
 
-        The edition of the template (e.g. enterprise)  # noqa: E501
 
-        :param edition: The edition of this TemplateResponse.  # noqa: E501
-        :type edition: str
+        :param properties: The properties of this TemplateResponse.  # noqa: E501
+        :type properties: TemplateProperties
         """
 
-        self._edition = edition
-
-    @property
-    def cores(self):
-        """Gets the cores of this TemplateResponse.  # noqa: E501
-
-        The number of CPU cores.  # noqa: E501
-
-        :return: The cores of this TemplateResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._cores
-
-    @cores.setter
-    def cores(self, cores):
-        """Sets the cores of this TemplateResponse.
-
-        The number of CPU cores.  # noqa: E501
-
-        :param cores: The cores of this TemplateResponse.  # noqa: E501
-        :type cores: int
-        """
-
-        self._cores = cores
-
-    @property
-    def ram(self):
-        """Gets the ram of this TemplateResponse.  # noqa: E501
-
-        The amount of memory in GB.  # noqa: E501
-
-        :return: The ram of this TemplateResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._ram
-
-    @ram.setter
-    def ram(self, ram):
-        """Sets the ram of this TemplateResponse.
-
-        The amount of memory in GB.  # noqa: E501
-
-        :param ram: The ram of this TemplateResponse.  # noqa: E501
-        :type ram: int
-        """
-
-        self._ram = ram
-
-    @property
-    def storage_size(self):
-        """Gets the storage_size of this TemplateResponse.  # noqa: E501
-
-        The amount of storage size in GB.  # noqa: E501
-
-        :return: The storage_size of this TemplateResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._storage_size
-
-    @storage_size.setter
-    def storage_size(self, storage_size):
-        """Sets the storage_size of this TemplateResponse.
-
-        The amount of storage size in GB.  # noqa: E501
-
-        :param storage_size: The storage_size of this TemplateResponse.  # noqa: E501
-        :type storage_size: int
-        """
-
-        self._storage_size = storage_size
+        self._properties = properties
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

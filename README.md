@@ -198,6 +198,7 @@ All URIs are relative to *https://api.ionos.com/databases/mongodb*
  - [State](docs/models/State)
  - [TemplateList](docs/models/TemplateList)
  - [TemplateListAllOf](docs/models/TemplateListAllOf)
+ - [TemplateProperties](docs/models/TemplateProperties)
  - [TemplateResponse](docs/models/TemplateResponse)
  - [User](docs/models/User)
  - [UserMetadata](docs/models/UserMetadata)

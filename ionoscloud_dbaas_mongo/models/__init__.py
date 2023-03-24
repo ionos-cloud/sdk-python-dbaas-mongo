@@ -46,6 +46,7 @@ from ionoscloud_dbaas_mongo.models.snapshot_response import SnapshotResponse
 from ionoscloud_dbaas_mongo.models.state import State
 from ionoscloud_dbaas_mongo.models.template_list import TemplateList
 from ionoscloud_dbaas_mongo.models.template_list_all_of import TemplateListAllOf
+from ionoscloud_dbaas_mongo.models.template_properties import TemplateProperties
 from ionoscloud_dbaas_mongo.models.template_response import TemplateResponse
 from ionoscloud_dbaas_mongo.models.user import User
 from ionoscloud_dbaas_mongo.models.user_metadata import UserMetadata
